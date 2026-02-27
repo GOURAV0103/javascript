@@ -13,3 +13,12 @@ console.log(valueInNumber)
 let login = 1
 let bool = Boolean(login);
 console.log(bool);
+
+//+++++++++++++++++++++++++++++MEMORY USAGE+++++++++++++++++++++++++
+//TWO TYPES STACK(use in premitive datatype change the copy not original), AND HEAP(use in non-premitive datatype change the original)
+let mywork = "University"
+
+let anothername = mywork;
+anothername = "chaiaurcode";
+console.log(mywork);
+console.log(anothername);
