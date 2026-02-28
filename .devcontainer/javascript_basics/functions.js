@@ -62,9 +62,20 @@ const user = {
 function objectHandler(userobject){
     console.log(`Usernanme is ${userobject.name} and age is ${userobject.age}`);
 }
-objectHandler({
-    name:"gourav",
-    age:22
-})
+// objectHandler({
+//     name:"gourav",
+//     age:22
+// })
 
+//arrray datatype in functions
+
+const arr1 = [1,2,3,4,5]
+
+
+function arryfun(myarr){
+    return myarr[1];
+}
+
+// console.log(arryfun(arr1));
+// console.log(arryfun([200,300,500,200]));
 
