@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function newlang(langname){
+        const li = document.createElement("li")
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').appendChild(li)
+    }
+    newlang("python")
+    newlang("Ruby")
+
+    //add language in optimize way
+    function addoptlang(langname){
+        const l1 = document.createElement('li');
+        l1.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(l1)
+    }
+    addoptlang('Rust')
+
+
+    //EDIT
+    const nthchild = document.querySelector("li:nth-child(2)")
+    // nthchild.innerHTML = "Django" //direct approach
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    nthchild.replaceWith(newli)
+
+    //edit outer html
+    const scndlang = document.querySelector("li:first-child")
+    scndlang.outerHTML = "<li>typescript</li>"
+
+
+    //REMOVE 
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+    
+</script>
+</html>
