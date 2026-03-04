@@ -15,7 +15,7 @@ form.addEventListener('submit', function (e) {
     if (bmi < 18.6) {
       results.innerHTML = `<span>Underweight: ${bmi}</span>`;
       // results.innerHTML = 'Underweight';
-    } else if (18.6 <= bmi >= 24.9) {
+    } else if (18.6 <= bmi <= 24.9) {
       results.innerHTML = `<span>Normal weight: ${bmi}</span>`;
       // results.innerHTML = 'Normal weight';
     } else {
