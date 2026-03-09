@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setTimeout function API ko bhi call krta hai 
+    const saySam = function(){
+        console.log("sammy")
+    }//setTimeout do work one time
+
+    const chng = function(){
+        document.querySelector('h1').innerHTML = "Chai aur Javascript"
+    }
+    // document.querySelector('h1').innerHTML = "Chai aur Javascript"
+    const changeme = setTimeout(chng ,2000);
+    setTimeout(saySam,2000);
+
+    // clearTimeout(changeme)
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearTimeout(changeme)
+        console.log("STOPPED");//stop on clicking stop button
+    })
+
+</script>
+</html>
