@@ -1,32 +1,68 @@
-function multiply5(num){
-    return num*5;
+// let name  = "sammy   "
+// console.log(name.trim().length);
+
+let myarr = ["thor" , "spiderman"]
+const arr = {
+    thor : "hammer",
+    spiderman : "sling",
+
+    getpower : function(){
+        console.log(`spiderman power is ${this.spiderman}`);
+    }
 }
 
-multiply5.power=2;
-
-// console.log(multiply5(5));
-// console.log(multiply5.power);
-// console.log(multiply5.prototype);//function can be a function and object both
-
-function createuser(username,score){
-    this.username = username;
-    this.score =  score ;
+//injecting prototype from developer side
+Object.prototype.sam = function(){
+    console.log(`sam is preseent in all object`);
 }
 
-createuser.prototype.increment = function(){
-    this.score++;
-    console.log(this.score);
+Array.prototype.heysam = function(){
+    console.log(`sam says hey`);
 }
 
-createuser.prototype.printMe = function(){
-    console.log(`score is ${this.score}`);
+// myarr.heysam()
+// myarr.sam()
+
+//inheritance
+
+const user = {
+    name : 'sam',
+    email : "xyz@gmail.com"
 }
 
-const user1 = new createuser("sam",23)
-const user2 = new createuser("sammy",27)
+const teacher = {
+    makeVideo : true 
+}
 
-// user1.increment()
-user1.printMe()
-user2.printMe()
+
+const teachingSupport = {
+    isAvailable : false 
+}
+
+const TASupport = {
+    makeAssignment : ' js assignment',
+    FullTime  : true,
+
+    __proto__  : teachingSupport //property to inherite another object 
+}
+
+teacher.__proto__ = user //can also inherite outside the object also
+
+//New syntax
+// setPrototypeOf user krte hai property inherite krne ky liye 
+//object.setProptotypeOf(kisko_krne _h , kiski_krne _h)
+Object.setPrototypeOf(teachingSupport , teacher)
+
+let anotherUSername = "ChiaAurCode   "
+
+String.prototype.truelength = function(){
+    console.log(`${this}`);
+    
+    console.log(`true length is : ${this.trim().length}`);
+}
+
+anotherUSername.truelength()
+"Sammy".truelength()//this property current context ko refer krte hai
+'medicaps'.truelength()
 
 
