@@ -16,8 +16,9 @@
 
             //requirement
             document
-            .querySelector('button')
-            .addEventListener('click',Clicked)
+                .querySelector('button')
+                .addEventListener('click',this.Clicked
+                .bind(this))//variables,functions sb attach hoke chle jate hai {bind} ka use krne pr
         }
         Clicked(){
             console.log("button clicked");
